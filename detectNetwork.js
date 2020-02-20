@@ -29,23 +29,26 @@
      // Otherwise return "MasterCard"
 
 var detectNetwork = function(cardNumber) {
+  var cardNumber = JSON.stringify(cardNumber);
   var length = cardNumber.length;
-  var firstPrefix = parseInt(cardNumber[0]);
+  var firstPrefix = cardNumber[0];
 
-  if (length === 14) {
+  if (cardNumber.length === 14) {
   	return "Diner's Club";
   } else if (length === 15) {
   	return "American Express";
   } else if (length === 13 || length === 19) {
   	return "Visa";
   } else if (length === 16) {
-  	if (firstPrefix === 4) {
+  	if (firstPrefix === '4') {
   		return "Visa";
   	} else {
   		return "MasterCard";
   	}
   }
+  
 }
+
 
 
 
