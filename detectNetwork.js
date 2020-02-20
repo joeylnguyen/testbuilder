@@ -15,38 +15,28 @@
 
  // create length var for convenience
  // create firstPrefix var for convenience
- // If cardNumber.length is 14
+ // If cardNumber.length is 14 and firstPrefix is 38 or 39
    // return "Diner's Club"
- // If cardNumber.length is 15
+ // If cardNumber.length is 15 and firstPrefix is 34 or 37
    // return "American Express"
- // If cardNumber.length is 13
+ // If cardNumber.length is 13 or 16 or 19 and cardNumber[0] is 4
    // return "Visa"
- // If cardNumber.length is 19
-   // return "Visa"
- // If cardNumber.length is 16
-   // If the first number is 4
-     // return "Visa"
-     // Otherwise return "MasterCard"
+ // If cardNumber.length is 16 and firstPrefix is 51 or 52 or 54 or 54 or 55
+     // return "MasterCard"
 
 var detectNetwork = function(cardNumber) {
-  var cardNumber = JSON.stringify(cardNumber);
   var length = cardNumber.length;
-  var firstPrefix = cardNumber[0];
+  var firstPrefix = cardNumber[0] + cardNumber[1];
 
-  if (cardNumber.length === 14) {
+  if (cardNumber.length === 14 && (firstPrefix === '38' || firstPrefix === '39')) {
   	return "Diner's Club";
-  } else if (length === 15) {
+  } else if (length === 15 && (firstPrefix === '34' || firstPrefix === '37')) {
   	return "American Express";
-  } else if (length === 13 || length === 19) {
+  } else if ((length === 13 || length === 16 || length === 19) && cardNumber[0] === '4') {
   	return "Visa";
-  } else if (length === 16) {
-  	if (firstPrefix === '4') {
-  		return "Visa";
-  	} else {
-  		return "MasterCard";
-  	}
+  } else if (length === 16 && (firstPrefix === '51' || firstPrefix === '52' || firstPrefix === '53' || firstPrefix === '54' || firstPrefix === '55')) {
+  	return "MasterCard";
   }
-  
 }
 
 
