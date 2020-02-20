@@ -13,6 +13,20 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
+
+  // Detect length of string
+  // Return network based on length
+
+  // Create object that has properties for cardNumber length
+  // Return value at property length key
+
+  var networkData = {
+  	14 : "Diner's Club",
+  	15 : "American Express"
+  };
+
+  return networkData[cardNumber.length];
+
 };
 
 
