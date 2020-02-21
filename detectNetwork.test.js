@@ -247,6 +247,9 @@ describe('China UnionPay', function() {
       it('has a prefix of ' + prefix + ' and a length of 16', function() {
         detectNetwork('' + prefix + '1234567890').should.equal('China UnionPay');
       });
+      it('has a prefix of ' + prefix + ' and a length of 17', function() {
+        detectNetwork('' + prefix + '12345678901').should.equal('China UnionPay');
+      });
       it('has a prefix of ' + prefix + ' and a length of 18', function() {
         detectNetwork('' + prefix + '123456789012').should.equal('China UnionPay');
       });
@@ -262,6 +265,9 @@ describe('China UnionPay', function() {
       it('has a prefix of ' + prefix + ' and a length of 16', function() {
         detectNetwork('' + prefix + '1234567890123').should.equal('China UnionPay');
       });
+      it('has a prefix of ' + prefix + ' and a length of 17', function() {
+        detectNetwork('' + prefix + '12345678901234').should.equal('China UnionPay');
+      });
       it('has a prefix of ' + prefix + ' and a length of 18', function() {
         detectNetwork('' + prefix + '123456789012345').should.equal('China UnionPay');
       });
@@ -276,6 +282,9 @@ describe('China UnionPay', function() {
 
       it('has a prefix of ' + prefix + ' and a length of 16', function() {
         detectNetwork('' + prefix + '123456789012').should.equal('China UnionPay');
+      });
+      it('has a prefix of ' + prefix + ' and a length of 17', function() {
+        detectNetwork('' + prefix + '1234567890123').should.equal('China UnionPay');
       });
       it('has a prefix of ' + prefix + ' and a length of 18', function() {
         detectNetwork('' + prefix + '12345678901234').should.equal('China UnionPay');
