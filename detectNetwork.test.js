@@ -102,7 +102,7 @@ describe('MasterCard', function() {
   // Expect syntax is one way to do this, but there are others. 
   // If you want to know more, check out the documentation. 
   //   http://chaijs.com/api/bdd/
-  var expect = chai.expect;
+  var should = chai.should;
  
   it('MasterCard', function() {
     detectNetwork('5112345678901234').should.equal('MasterCard');
