@@ -132,7 +132,7 @@ describe('MasterCard', function() {
  
   it('has a prefix of 55 and a length of 16', function() {
     detectNetwork('5512345678901234').should.equal('MasterCard');
-  })
+  });
  
 });
 
@@ -143,9 +143,11 @@ describe('Discover', function() {
 
   it('has a prefix of 6011 and a length of 16', function() {
     detectNetwork('6011123456789012').should.equal('Discover');
+  });
+
   it('has a prefix of 6011 and a length of 19', function() {
     detectNetwork('6011123456789012345').should.equal('Discover');
-  }
+  });
 });
 
 // describe('Maestro', function() {
