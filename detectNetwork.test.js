@@ -150,7 +150,17 @@ describe('Discover', function() {
   });
 });
 
-// describe('Maestro', function() {
-//   // Write full test coverage for the Maestro card
-// });
+describe('Maestro', function() {
+  // Write full test coverage for the Maestro card
+  var should = chai.should;
+
+  it('has a prefix of 6304 and a length of 15', function() {
+    detectNetwork('630412345678901').should.equal('Maestro');
+  });
+
+  it('has a prefix of 5018 and a length of 19', function() {
+    detectNetwork('5018123456789012345').should.equal('Maestro');
+  });
+
+});
 
