@@ -56,7 +56,7 @@ var detectNetwork = function(cardNumber) {
       return "Discover";
 	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6304')) {
       return "Maestro";
-	  } else if ((length === 16 || length === 18 || length === 19) && ((prefix >= 622126 && prefix <= 622925) || (prefix >= 624 && prefix <= 626) || (prefix >= 6282 && prefix <= 6288))) {
+	  } else if ((length === 16 || length === 17 || length === 18 || length === 19) && ((prefix >= 622126 && prefix <= 622925) || (prefix >= 624 && prefix <= 626) || (prefix >= 6282 && prefix <= 6288))) {
       return "China UnionPay";
 	  } else if ((length === 16 || length === 18 || length === 19) && (longerPrefix === '4903' || longerPrefix === '4905' || longerPrefix === '4911' || longerPrefix === '4936' || longerPrefix === '564182' || longerPrefix === '633110' || longerPrefix === '6333' || longerPrefix === '6759')) {
 	  return "Switch";
