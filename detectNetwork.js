@@ -15,8 +15,14 @@
   // Discover always has a prefix of 6011, 644-649, or 65, and a length of 16 or 19.
   // Maestro always has a prefix of 5018, 5020, 5038, or 6304, and a length of 12-19.
 
+// China UnionPay always has a prefix of 622126-622925, 624-626, or 6282-6288 and a length of 16-19.
+// Switch always has a prefix of 4903, 4905, 4911, 4936, 564182, 633110, 6333, or 6759 and a length of 16, 18, or 19.
+
+// Heads up! Switch and Visa seem to have some overlapping card numbers - in any apparent conflict, you should choose the network with the longer prefix.
+
  // create length var for convenience
  // create prefix var for convenience and set to first number
+ // create longerPrefix var and set to first number plus second number
  // loop through cardNumber starting at 2nd number
 	 // If cardNumber.length is 14 and prefix is 38 or 39
 	   // return "Diner's Club"
@@ -50,7 +56,9 @@ var detectNetwork = function(cardNumber) {
       return "Discover"
 	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6304')) {
       return "Maestro"
-	};
+	  } else if ((length === 16 || length === 18 || length === 19) && ((prefix >= 622126 && prefix <= 622925) || (prefix >= 624 && prefix <= 626) || (prefix >= 6282 && prefix <= 6288))) {
+      return "China UnionPay";
+	  }
 
 	prefix += cardNumber[i];
   }
