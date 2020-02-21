@@ -48,8 +48,8 @@ var detectNetwork = function(cardNumber) {
 	  return "MasterCard";
 	  } else if ((length === 16 || length === 19) && (prefix === '6011' || prefix === '644-649' || prefix === '65')) {
       return "Discover"
-	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6034')) {
-      return "Mestro"
+	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6304')) {
+      return "Maestro"
 	};
 
 	prefix += cardNumber[i];
