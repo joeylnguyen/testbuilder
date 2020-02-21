@@ -212,6 +212,28 @@ describe('Maestro', function() {
 
 });
 
+// Write full test coverage for China UnionPay
 
+// Run describe function with arguments 'China UnionPay' and test function
+  // Create var should equal to chai.should
 
+  // loop through prefix range 622126-622925
+    // Invoke IIFE prefix
+      // Create test cases for lengths: 16. 18. and 19
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123
 
+  // loop through prefix range 624-626
+  // Invoke IIFE prefix
+      // Create test cases for lengths: 16. 18. and 19
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890123
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012345
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123456
+
+  // loop through prefix range 6282-6288
+  // Invoke IIFE prefix
+      // Create test cases for lengths: 16. 18. and 19
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 123456789012
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 12345678901234
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 123456789012345
