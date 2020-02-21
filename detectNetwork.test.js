@@ -165,32 +165,40 @@ describe('Discover', function() {
       it('has a prefix of ' + prefix + ' and a length of 19', function() {
         detectNetwork('' + prefix + '' + '1234567890123456').should.equal('Discover');
       });
-    })(prefix)}
-
+    })(prefix)
+  }
 });
 
-// describe('Maestro', function() {
-//   // Write full test coverage for the Maestro card
-//   var should = chai.should;
+describe('Maestro', function() {
+  // Write full test coverage for the Maestro card
+  var should = chai.should;
 
-//   for (var length = 12; length <= 19; length++) {
-//     (function(length) {
-//       it('has a prefix of 5018 and a length of ' + length + '', function() {
-//         detectNetwork('5018' + '' +)
-//       }
-//       it('has a prefix of 5020 and a length of ' + length + '');
-//       it('has a prefix of 5038 and a length of ' + length + '');
-//       it('has a prefix of 6304 and a length of ' + length + '');
-//     })
-//   }
+  for (var length = 12; length <= 19; length++) {
+    (function(length) {
+      var str = new Array(length - 3).join('1');
 
-//   // it('has a prefix of 6304 and a length of 15', function() {
-//   //   detectNetwork('630412345678901').should.equal('Maestro');
-//   // });
+      it('has a prefix of 5018 and a length of ' + length + '', function() {
+        detectNetwork('5018' + str);
+      });
+      it('has a prefix of 5020 and a length of ' + length + '', function() {
+        detectNetwork('5020' + str);
+      });
+      it('has a prefix of 5038 and a length of ' + length + '', function() {
+        detectNetwork('5038' + str);
+      });
+      it('has a prefix of 6304 and a length of ' + length + '', function() {
+        detectNetwork('6304' + str);
+      });
+    })(length)
+  }
 
-//   // it('has a prefix of 5018 and a length of 19', function() {
-//   //   detectNetwork('5018123456789012345').should.equal('Maestro');
-//   // });
+  // it('has a prefix of 6304 and a length of 15', function() {
+  //   detectNetwork('630412345678901').should.equal('Maestro');
+  // });
 
-// });
+  // it('has a prefix of 5018 and a length of 19', function() {
+  //   detectNetwork('5018123456789012345').should.equal('Maestro');
+  // });
+
+});
 
