@@ -179,25 +179,25 @@ describe('Maestro', function() {
     // Invoke IIFE length 
       // Create variable str that creates a string based on current length and set prefix length
       // Create test cases for 5018, 5020, 5038, and 6304
-        // it has a prefix of 5018 and a length of current length, run detectNetwork on 5018 + str
-        // it has a prefix of 5020 and a length of current length, run detectNetwork on 5020 + str
-        // it has a prefix of 5038 and a length of current length, run detectNetwork on 5038 + str
-        // it has a prefix of 6304 and a length of current length, run detectNetwork on 6304 + str
+        // it has a prefix of 5018 and a length of current length, run detectNetwork on 5018 + str should equal 'Maestro'
+        // it has a prefix of 5020 and a length of current length, run detectNetwork on 5020 + str should equal 'Maestro'
+        // it has a prefix of 5038 and a length of current length, run detectNetwork on 5038 + str should equal 'Maestro'
+        // it has a prefix of 6304 and a length of current length, run detectNetwork on 6304 + str should equal 'Maestro'
   for (var length = 12; length <= 19; length++) {
     (function(length) {
       var str = new Array(length - 3).join('1');
 
       it('has a prefix of 5018 and a length of ' + length + '', function() {
-        detectNetwork('5018' + str);
+        detectNetwork('5018' + str).should.equal('Maestro');
       });
       it('has a prefix of 5020 and a length of ' + length + '', function() {
-        detectNetwork('5020' + str);
+        detectNetwork('5020' + str).should.equal('Maestro');
       });
       it('has a prefix of 5038 and a length of ' + length + '', function() {
-        detectNetwork('5038' + str);
+        detectNetwork('5038' + str).should.equal('Maestro');
       });
       it('has a prefix of 6304 and a length of ' + length + '', function() {
-        detectNetwork('6304' + str);
+        detectNetwork('6304' + str).should.equal('Maestro');
       });
     })(length)
   }
@@ -220,23 +220,23 @@ describe('Maestro', function() {
   // loop through prefix range 622126-622925
     // Invoke IIFE prefix
       // Create test cases for lengths: 16. 18. and 19
-        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890
-        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012
-        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123 should equal 'China UnionPay'
 
   // loop through prefix range 624-626
   // Invoke IIFE prefix
       // Create test cases for lengths: 16. 18. and 19
-        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890123
-        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012345
-        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123456
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 1234567890123 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 123456789012345 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 1234567890123456 should equal 'China UnionPay'
 
   // loop through prefix range 6282-6288
   // Invoke IIFE prefix
       // Create test cases for lengths: 16. 18. and 19
-        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 123456789012
-        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 12345678901234
-        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 123456789012345
+        // it has a prefix of current prefix and a length of 16, run detectNetwork on prefix + 123456789012 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 18,run detectNetwork on 5038 + 12345678901234 should equal 'China UnionPay'
+        // it has a prefix of current prefix and a length of 19, run detectNetwork on 6304 + 123456789012345 should equal 'China UnionPay'
 describe('China UnionPay', function() {
   
   var should = chai.should;
