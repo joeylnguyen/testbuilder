@@ -12,33 +12,49 @@
   // The American Express network always starts with a 34 or 37 and is 15 digits long
   // Visa always has a prefix of 4 and a length of 13, 16, or 19.
   // MasterCard always has a prefix of 51, 52, 53, 54, or 55 and a length of 16.
+  // Discover always has a prefix of 6011, 644-649, or 65, and a length of 16 or 19.
+  // Maestro always has a prefix of 5018, 5020, 5038, or 6304, and a length of 12-19.
 
  // create length var for convenience
- // create firstPrefix var for convenience
- // If cardNumber.length is 14 and firstPrefix is 38 or 39
-   // return "Diner's Club"
- // If cardNumber.length is 15 and firstPrefix is 34 or 37
-   // return "American Express"
- // If cardNumber.length is 13 or 16 or 19 and cardNumber[0] is 4
-   // return "Visa"
- // If cardNumber.length is 16 and firstPrefix is 51 or 52 or 54 or 54 or 55
-     // return "MasterCard"
+ // create prefix var for convenience and set to first number
+ // loop through cardNumber starting at 2nd number
+	 // If cardNumber.length is 14 and prefix is 38 or 39
+	   // return "Diner's Club"
+	 // If cardNumber.length is 15 and prefix is 34 or 37
+	   // return "American Express"
+	 // If cardNumber.length is 13 or 16 or 19 and cardNumber[0] is 4
+	   // return "Visa"
+	 // If cardNumber.length is 16 and prefix is 51 or 52 or 54 or 54 or 55
+	     // return "MasterCard"
+	 // If cardNumber.length is 16 or 19 and prefix is 6011 or 644-649 or 65
+	     // return "Discover"
+	 // If cardNumber.length is greater than or equal to 12 and less than or equal to 19 and prefix is 5018 or 5020 or 5038 or 6304
+	     // return "Maestro"
+	 // At end of loop, add current number to prefix
 
 var detectNetwork = function(cardNumber) {
   var length = cardNumber.length;
-  var firstPrefix = cardNumber[0] + cardNumber[1];
+  var prefix = cardNumber[0];
 
-  if (cardNumber.length === 14 && (firstPrefix === '38' || firstPrefix === '39')) {
-  	return "Diner's Club";
-  } else if (length === 15 && (firstPrefix === '34' || firstPrefix === '37')) {
-  	return "American Express";
-  } else if ((length === 13 || length === 16 || length === 19) && cardNumber[0] === '4') {
-  	return "Visa";
-  } else if (length === 16 && (firstPrefix === '51' || firstPrefix === '52' || firstPrefix === '53' || firstPrefix === '54' || firstPrefix === '55')) {
-  	return "MasterCard";
+  for (var i = 1; i < length; i++) {
+
+	if (cardNumber.length === 14 && (prefix === '38' || prefix === '39')) {
+	  return "Diner's Club";
+	  } else if (length === 15 && (prefix === '34' || prefix === '37')) {
+	  return "American Express";
+	  } else if ((length === 13 || length === 16 || length === 19) && prefix === '4') {
+	  return "Visa";
+	  } else if (length === 16 && (prefix === '51' || prefix === '52' || prefix === '53' || firstPrefix === '54' || firstPrefix === '55')) {
+	  return "MasterCard";
+	  } else if ((length === 16 || length === 19) && (prefix === '6011' || prefix === '644-649' || prefix === '65')) {
+      return "Discover"
+	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6034')) {
+      return "Mestro"
+	};
+
+	prefix += cardNumber[i];
   }
 }
-
 
 
 
