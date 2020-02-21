@@ -171,8 +171,18 @@ describe('Discover', function() {
 
 describe('Maestro', function() {
   // Write full test coverage for the Maestro card
+  
+  // create var should euqal to chai helper function should
   var should = chai.should;
-
+  
+  // loop through the range of lengths 12-19
+    // Invoke IIFE length 
+      // Create variable str that creates a string based on current length and set prefix length
+      // Create test cases for 5018, 5020, 5038, and 6304
+        // it has a prefix of 5018 and a length of current length, run detectNetwork on 5018 + str
+        // it has a prefix of 5020 and a length of current length, run detectNetwork on 5020 + str
+        // it has a prefix of 5038 and a length of current length, run detectNetwork on 5038 + str
+        // it has a prefix of 6304 and a length of current length, run detectNetwork on 6304 + str
   for (var length = 12; length <= 19; length++) {
     (function(length) {
       var str = new Array(length - 3).join('1');
@@ -201,4 +211,7 @@ describe('Maestro', function() {
   // });
 
 });
+
+
+
 
