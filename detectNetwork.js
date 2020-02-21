@@ -38,11 +38,13 @@
 	     // return "Maestro"
 	 // At end of loop, add current number to prefix
 
+  // Let's try looping from the end
+
 var detectNetwork = function(cardNumber) {
   var length = cardNumber.length;
   var prefix = cardNumber[0];
 
-  for (var i = 1; i < length; i++) {
+  for (var i = length - 1; i > 0; i++) {
 
 	if (cardNumber.length === 14 && (prefix === '38' || prefix === '39')) {
 	  return "Diner's Club";
@@ -53,9 +55,9 @@ var detectNetwork = function(cardNumber) {
 	  } else if (length === 16 && (prefix === '51' || prefix === '52' || prefix === '53' || prefix === '54' || prefix === '55')) {
 	  return "MasterCard";
 	  } else if ((length === 16 || length === 19) && (prefix === '6011' || (prefix >= '644' && prefix <= '649') || prefix === '65')) {
-      return "Discover"
+      return "Discover";
 	  } else if ((length >= 12 && length <= 19) && (prefix === '5018' || prefix === '5020' || prefix === '5038' || prefix === '6304')) {
-      return "Maestro"
+      return "Maestro";
 	  } else if ((length === 16 || length === 18 || length === 19) && ((prefix >= 622126 && prefix <= 622925) || (prefix >= 624 && prefix <= 626) || (prefix >= 6282 && prefix <= 6288))) {
       return "China UnionPay";
 	  }
