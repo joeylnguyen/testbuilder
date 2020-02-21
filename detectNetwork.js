@@ -50,8 +50,6 @@ var detectNetwork = function(cardNumber) {
 	  return "Diner's Club";
 	  } else if (length === 15 && (prefix === '34' || prefix === '37')) {
 	  return "American Express";
-	  } else if ((length === 13 || length === 16 || length === 19) && prefix === '4') {
-	  return "Visa";
 	  } else if (length === 16 && (prefix === '51' || prefix === '52' || prefix === '53' || prefix === '54' || prefix === '55')) {
 	  return "MasterCard";
 	  } else if ((length === 16 || length === 19) && (prefix === '6011' || (prefix >= '644' && prefix <= '649') || prefix === '65')) {
@@ -62,6 +60,8 @@ var detectNetwork = function(cardNumber) {
       return "China UnionPay";
 	  } else if ((length === 16 || length === 18 || length === 19) && (longerPrefix === '4903' || longerPrefix === '4905' || longerPrefix === '4911' || longerPrefix === '4936' || longerPrefix === '564182' || longerPrefix === '633110' || longerPrefix === '6333' || longerPrefix === '6759')) {
 	  return "Switch";
+	  } else if ((length === 13 || length === 16 || length === 19) && prefix === '4') {
+	  return "Visa";
 	  };
 
 	prefix += cardNumber[i];
